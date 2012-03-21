@@ -43,7 +43,6 @@ var Vector3 = Class.extend({
 		);
 	},
 
-	/* Divides the current vector with the supplied vector */
 	divide : function (x) {
 		return new Vector3(
 			this.x / x,
@@ -60,12 +59,14 @@ var Vector3 = Class.extend({
 		var x = this.x - other.x;
 		var y = this.y - other.y;
 		var z = this.z - other.z;
+		
 		return new Vector3(
 			-(x / distance),
 			-(y / distance),
 			-(z / distance)
 		);
 	},
+
 	normalize : function () {
 		var length = this.magnitude();
 		if (length == 0)
@@ -76,6 +77,7 @@ var Vector3 = Class.extend({
 			this.z / length
 		);
 	},
+
 	rotateX : function (angle) {
 		var cosRY = Math.cos(angle);
 		var sinRY = Math.sin(angle);
@@ -86,6 +88,7 @@ var Vector3 = Class.extend({
 				(this.y * -sinRY) + (this.z * cosRY)
 			);
 	},
+
 	rotateY : function (angle) {
 		var cosRY = Math.cos(angle);
 		var sinRY = Math.sin(angle);

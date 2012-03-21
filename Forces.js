@@ -19,11 +19,18 @@ var Gravity = {
 			);
 	},
 
+	/*
+		Applies the gravitational force due to particleB on particleA
+	*/
 	applyForceBetweenParticles : function(particleA, particleB, g) {
 		var gravity = Gravity.getForceBetweenParticles(particleA, particleB, g);
 		particleA.velocity = particleA.velocity.add(gravity);
 	},
 
+	/*
+		Applies the gravitational force due to all the particles in the supplied
+		particle-list.
+	*/
 	applyForcesBetweenAllParticles : function(particles, g) {
 		for (var i = particles.length - 1; i >= 0; i--) {
 			var a = particles[i];

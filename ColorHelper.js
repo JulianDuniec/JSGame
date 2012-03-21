@@ -4,6 +4,9 @@
 */
 var ColorHelper = {
 	
+	/*
+		Returns a reandom-color
+	*/
  	rcolor : function() {
 		return (function (m, s, c) {
 			return (c ? arguments.callee(m, s, c - 1) : '#') +
@@ -11,6 +14,9 @@ var ColorHelper = {
 					})(Math, '0123456789ABCDEF', 5);
 	},
 
+	/*
+		Returns a luminated (lum == positive) or darkened (lum == negative) version of the same color
+	*/
 	colorLuminance : function(hex, lum) {
 		// validate hex string  
 		hex = String(hex).replace(/[^0-9a-f]/gi, '');

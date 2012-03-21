@@ -43,14 +43,6 @@ var Vector3 = Class.extend({
 		);
 	},
 
-	divide : function (x) {
-		return new Vector3(
-			this.x / x,
-			this.y / x,
-			this.z / x
-		);
-	},
-	
 	distanceTo : function(other) {
 		return this.subtract(other).magnitude();
 	},
